@@ -1,0 +1,21 @@
+MAIN SCOPE:
+ ☐ Erase generated files while I was playing around
+ ☐ Create blank rails app
+ ☐ ??
+
+DOCUMENTATION:
+ ☐ Write README
+ 
+ QUALITY:
+ ☐ Create tests
+ ☐ Add to Travis CI
+ 
+ README:
+ ☐ Add travis badge
+ ☐ Add gem version badge
+ ☐ Add code quality badge (code climate?)
+ ☐ Add other badges??
+ ☐ Write 'usage'
+
+OTHER:
+ ☐ Rename app and repository
