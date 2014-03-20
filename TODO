@@ -1,9 +1,9 @@
 MAIN SCOPE:
- ☐ Erase generated files while I was playing around
-     ☐ Clean test folder files
-     ☐ Clean old migrations and db
-     ☐ Clean assets (css, js)
- ☐ Create blank rails app
+ ✔ Erase generated files while I was playing around @done (14-03-20 17:54)
+     ✔ Clean test folder files @done (14-03-20 17:54)
+     ✔ Clean old migrations and db @done (14-03-20 17:54)
+     ✔ Clean assets (css, js) @done (14-03-20 17:54)
+ ✔ Create blank rails app @done (14-03-20 17:54)
  ☐ Create company
  ☐ Create company validations
  ☐ Create sample data for company in seeds.rb
