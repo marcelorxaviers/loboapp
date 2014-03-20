@@ -1,7 +1,22 @@
 MAIN SCOPE:
  ☐ Erase generated files while I was playing around
+     ☐ Clean test folder files
+     ☐ Clean old migrations and db
+     ☐ Clean assets (css, js)
  ☐ Create blank rails app
- ☐ ??
+ ☐ Create company
+ ☐ Create company validations
+ ☐ Create sample data for company in seeds.rb
+ ☐ Create contact
+ ☐ Create contact validations
+ ☐ Create sample data for contact in seeds.rb
+ ☐ Create session (by company)
+ ☐ Session context switch
+ ☐ Register / Unregister contact no highrise
+ ☐ Authentication (by company) (?)
+ ☐ Add simple form (?)
+ ☐ Create default layout
+ ☐ Clean routes.rb (example documentation)
 
 DOCUMENTATION:
  ☐ Write README
@@ -19,3 +34,4 @@ DOCUMENTATION:
 
 OTHER:
  ☐ Rename app and repository
+ ☐ i18n (?) - Locales
