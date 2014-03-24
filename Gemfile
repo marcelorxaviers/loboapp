@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 1.2'
 # Rails forms made easy
 gem 'simple_form'
 
+# Authentication and authorization
+gem 'devise'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

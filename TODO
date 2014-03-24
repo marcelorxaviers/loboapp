@@ -5,6 +5,7 @@ MAIN SCOPE:
      ✔ Clean assets (css, js) @done (14-03-20 17:54)
  ✔ Create blank rails app @done (14-03-20 17:54)
  ✔ Add simple_form @done (14-03-24 08:46)
+ ☐ (?) Copy devise views to app using $ rails g devise:views
  ☐ Use "simple_form_for(@user, html: {class: 'form-horizontal' }) do |form|" in views
  ☐ Create company
  ☐ Create company validations
@@ -16,9 +17,9 @@ MAIN SCOPE:
  ☐ Session context switch
  ☐ Register / Unregister contact no highrise
  ☐ Authentication (by company) (?)
- ☐ Add simple form (?)
  ☐ Create default layout
  ☐ Clean routes.rb (example documentation)
+ ☐ Change default url options on env/prod to the actual host
 
 DOCUMENTATION:
  ☐ Write README
