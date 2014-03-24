@@ -4,6 +4,7 @@ MAIN SCOPE:
      ✔ Clean old migrations and db @done (14-03-20 17:54)
      ✔ Clean assets (css, js) @done (14-03-20 17:54)
  ✔ Create blank rails app @done (14-03-20 17:54)
+ ☐ Add simple_form
  ☐ Create company
  ☐ Create company validations
  ☐ Create sample data for company in seeds.rb
