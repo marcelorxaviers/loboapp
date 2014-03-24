@@ -25,7 +25,7 @@ DOCUMENTATION:
  ☐ Write README
  
  QUALITY:
- ☐ Add RSpec
+ ✔ Add RSpec @done (14-03-24 09:50)
  ☐ Add cucumber
  ☐ Create tests
  ☐ Add to Travis CI
