@@ -14,6 +14,5 @@ GMAIL_USERNAME: lobo.demo.app42
 GMAIL_PASSWORD: d4m04app
 
 # App admin user
-ADMIN_NAME: Administrator
-ADMIN_EMAIL: rhlobo+highrise_demo_app@gmail.com
+ADMIN_EMAIL: rhlobo@gmail.com
 ADMIN_PASSWORD: d4m04app
