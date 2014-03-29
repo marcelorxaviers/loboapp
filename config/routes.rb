@@ -3,6 +3,7 @@ Loboapp::Application.routes.draw do
   devise_for :users
 
   authenticated :user do
+    resources :companies
     root :to => 'home#index', as: :authenticated_root
   end
 
