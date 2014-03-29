@@ -1,8 +1,14 @@
 Loboapp::Application.routes.draw do
 
+  authenticated :user do
+    root :to => 'home#index', as: :authenticated_root
+  end
+
+  unauthenticated do
+    root :to => "home#index", as: :unauthenticated_root
+  end
+
   devise_for :users
-  
-  root to: "home#index"
   
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
