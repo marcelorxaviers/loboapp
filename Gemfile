@@ -32,6 +32,9 @@ gem 'simple_form'
 # Authentication and authorization
 gem 'devise'
 
+# Environment variables
+gem "figaro", ">= 0.5.3"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
