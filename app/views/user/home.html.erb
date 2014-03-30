@@ -1,0 +1,52 @@
+<h1>User#home</h1>
+
+<h1>Companies I am in</h1>
+
+<% if @companies.length == 0 %>
+
+<h3>Nothing here =(</h3>
+You may <%= link_to 'create a new company', new_company_path %>
+
+<% else %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.user.email %></td>
+        <td><%= link_to 'Show', company %></td>
+        <td>
+          <% if company.users.include?(current_user) %>
+            <%= link_to 'Edit', edit_company_path(company) %>
+          <% end %>
+        </td>
+        <td>
+          <% if company.user == current_user %>
+            <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+        <td>
+          <% if company.user != current_user %>
+            <% if company.users.include?(current_user) %>
+              Leave?
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>

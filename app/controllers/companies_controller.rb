@@ -1,6 +1,11 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
+  def join
+    @company = Company.find(params[:company_id])
+    @company.users.push(current_user) unless @company.users.include?(current_user)
+  end
+
   # GET /companies
   # GET /companies.json
   def index
@@ -26,6 +31,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     @company.user = current_user
+    @company.users << current_user
 
     respond_to do |format|
       if @company.save

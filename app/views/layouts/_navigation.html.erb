@@ -2,10 +2,13 @@
 
   <% if user_signed_in? %>
     <li>
-      <%= link_to 'Application', authenticated_root_path %>
+      <%= link_to 'My home', authenticated_root_path %>
     </li>
     <li>
-      <%= link_to 'Companies', companies_path %>
+      <%= link_to 'All Companies', companies_path %>
+    </li>
+    <li>
+      <%= link_to 'New Company', new_company_path %>
     </li>
   <% else %>
     <li>

@@ -3,8 +3,10 @@ Loboapp::Application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    resources :companies
-    root :to => 'home#index', as: :authenticated_root
+    resources :companies do
+      get "join"
+    end
+    root :to => 'user#home', as: :authenticated_root
   end
 
   unauthenticated do

@@ -1,0 +1,23 @@
+<h1>Joining company</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @company.user.email %>
+</p>
+
+<p>
+  <strong>Members:</strong>
+  <ul>
+    <% @company.users.each do |member| %>
+        <il><%= member.email %></il>
+    <% end %>
+  </ul>
+</p>
+
+
+<%= link_to 'Back', :back %>
