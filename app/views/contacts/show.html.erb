@@ -1,0 +1,43 @@
+<%= @contact.company.user.email %> / 
+<%= link_to @contact.company.name, @contact.company %> / 
+<%= link_to @contact.fullname, company_contact_path(@contact.company, @contact) %>
+
+<%= link_to 'Edit', edit_company_contact_path(@contact.company, @contact) %>
+<%= link_to 'Destroy', company_contact_path(@contact.company, @contact), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<p>
+  <strong>First name:</strong>
+  <%= @contact.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @contact.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @contact.company_name %>
+</p>
+
+<p>
+  <strong>Job title:</strong>
+  <%= @contact.job_title %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @contact.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @contact.website %>
+</p>
+
+<%= link_to 'Back', :back %>

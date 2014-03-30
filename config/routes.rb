@@ -6,6 +6,7 @@ Loboapp::Application.routes.draw do
     resources :companies do
       get "join"
       get "leave"
+      resources :contacts
     end
     root :to => 'user#home', as: :authenticated_root
   end

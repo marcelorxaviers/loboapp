@@ -5,11 +5,10 @@ MAIN SCOPE:
      ✔ Clean assets (css, js) @done (14-03-20 17:54)
  ✔ Create blank rails app @done (14-03-20 17:54)
  ✔ Add simple_form @done (14-03-24 08:46)
- ☐ (?) Copy devise views to app using $ rails g devise:views
  ☐ Use "simple_form_for(@user, html: {class: 'form-horizontal' }) do |form|" in views
- ☐ Create company
+ ✔ Create company @done (14-03-30 11:38)
  ☐ Create company validations
- ☐ Create sample data for company in seeds.rb
+ ✔ Create sample data for company in seeds.rb @done (14-03-30 11:39)
  ☐ Create contact
  ☐ Create contact validations
  ☐ Create sample data for contact in seeds.rb
