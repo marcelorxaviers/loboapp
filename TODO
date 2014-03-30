@@ -9,16 +9,23 @@ MAIN SCOPE:
  ✔ Create company @done (14-03-30 11:38)
  ☐ Create company validations
  ✔ Create sample data for company in seeds.rb @done (14-03-30 11:39)
- ☐ Create contact
+ ✔ Create contact @done (14-03-30 14:49)
  ☐ Create contact validations
- ☐ Create sample data for contact in seeds.rb
- ☐ Create session (by company)
- ☐ Session context switch
+ ✔ Create sample data for contact in seeds.rb @done (14-03-30 15:05)
+ ✔ Create session @done (14-03-30 15:05)
+ ✘ Session context switch @cancelled (14-03-30 15:05)
+ ☐ Register / Unregister contact em mock do highrise
+ ☐ Execute integration in bg job
+ ☐ Add integration gem to the app
  ☐ Register / Unregister contact no highrise
- ☐ Authentication (by company) (?)
+ ✔ Authentication (by company) (?) @done (14-03-30 15:05)
+ ☐ Authorization - Protect users not in the company to change its data or do anything (even see) their contacts
+
+PRETTYFICAR APP:
  ☐ Create default layout
  ☐ Clean routes.rb (example documentation)
- ☐ Change default url options on env/prod to the actual host
+ ☐ Change default url options on env/prod to the actual host   
+ ☐ Create background job for api call
 
 DOCUMENTATION:
  ☐ Write README
