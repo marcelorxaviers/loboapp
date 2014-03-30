@@ -14,10 +14,11 @@ MAIN SCOPE:
  ✔ Create sample data for contact in seeds.rb @done (14-03-30 15:05)
  ✔ Create session @done (14-03-30 15:05)
  ✘ Session context switch @cancelled (14-03-30 15:05)
- ☐ Register / Unregister contact em mock do highrise
- ☐ Execute integration in bg job
+ ✔ Register / Unregister contact em mock do highrise @done (14-03-30 16:19)
+ ✔ Execute integration in bg job @done (14-03-30 16:19)
  ☐ Add integration gem to the app
  ☐ Register / Unregister contact no highrise
+ ☐ Remember if it is registered or not into highrise
  ✔ Authentication (by company) (?) @done (14-03-30 15:05)
  ☐ Authorization - Protect users not in the company to change its data or do anything (even see) their contacts
 

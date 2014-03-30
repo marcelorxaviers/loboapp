@@ -1,29 +1,55 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
   before_action :set_company, only: [:index, :show, :new, :edit, :create, :destroy]
+  before_action :set_company_by_contact_id, only: [:highrise_add, :highrise_remove]
 
-  # GET /contacts
-  # GET /contacts.json
+  # GET /companies/:company_id/contacts/:contact_id/highrise_add
+  def highrise_add
+    def parallel_work
+      sleep(10.seconds)
+      puts 'done work'
+    end
+    Thread.new{parallel_work()}
+
+    respond_to do |format|
+      format.html { redirect_to authenticated_root_path, notice: "Adding contact '#{@contact.fullname}' to highrise." }
+      format.json { head :no_content }
+    end
+  end
+
+  # GET /companies/:company_id/contacts/:contact_id/highrise_remove
+  def highrise_remove
+    def parallel_work
+      sleep(10.seconds)
+      puts 'done work'
+    end
+    Thread.new{parallel_work()}
+
+    respond_to do |format|
+      format.html { redirect_to authenticated_root_path, notice: "Removing contact '#{@contact.fullname}' from highrise." }
+      format.json { head :no_content }
+    end
+  end
+
+  # GET /companies/:company_id/contacts
   def index
     @contacts = Contact.all
   end
 
-  # GET /contacts/1
-  # GET /contacts/1.json
+  # GET /companies/:company_id/contacts/:id
   def show
   end
 
-  # GET /contacts/new
+  # GET /companies/:company_id/contacts/new
   def new
     @contact = Contact.new
   end
 
-  # GET /contacts/1/edit
+  # GET /companies/:company_id/contacts/:id/edit
   def edit
   end
 
-  # POST /contacts
-  # POST /contacts.json
+  # POST /companies/:company_id/contacts
   def create
     @contact = Contact.new(contact_params)
     @contact.company = @company
@@ -39,8 +65,7 @@ class ContactsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /contacts/1
-  # PATCH/PUT /contacts/1.json
+  # PATCH/PUT /companies/:company_id/contacts/:id
   def update
     respond_to do |format|
       if @contact.update(contact_params)
@@ -53,8 +78,7 @@ class ContactsController < ApplicationController
     end
   end
 
-  # DELETE /contacts/1
-  # DELETE /contacts/1.json
+  # DELETE /companies/:company_id/contacts/:id
   def destroy
     @contact.destroy
     respond_to do |format|
@@ -64,9 +88,12 @@ class ContactsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_contact
       @contact = Contact.find(params[:id])
+    end
+
+    def set_company_by_contact_id
+      @contact = Contact.find(params[:contact_id])
     end
 
     def set_company

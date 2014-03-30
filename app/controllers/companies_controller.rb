@@ -1,8 +1,8 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
+  before_action :set_company_by_company_id, only: [:join, :leave]
 
   def join
-    @company = Company.find(params[:company_id])
     @company.users.push(current_user) unless @company.users.include?(current_user)
     respond_to do |format|
       format.html { redirect_to @company, notice: 'Successfully joined company.' }
@@ -11,7 +11,6 @@ class CompaniesController < ApplicationController
   end
 
   def leave
-    @company = Company.find(params[:company_id])
     if @company.user != current_user
       @company.users.delete(current_user)
     end
@@ -87,6 +86,10 @@ class CompaniesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_company
       @company = Company.find(params[:id])
+    end
+
+    def set_company_by_company_id
+      @company = Company.find(params[:company_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -6,7 +6,10 @@ Loboapp::Application.routes.draw do
     resources :companies do
       get "join"
       get "leave"
-      resources :contacts
+      resources :contacts do
+        get "highrise_add"
+        get "highrise_remove"
+      end
     end
     root :to => 'user#home', as: :authenticated_root
   end
