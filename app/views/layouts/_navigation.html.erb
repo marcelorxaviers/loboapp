@@ -1,6 +1,6 @@
 <ul class="nav">
-
   <% if user_signed_in? %>
+
     <li>
       <%= link_to 'My home', authenticated_root_path %>
     </li>
@@ -10,10 +10,12 @@
     <li>
       <%= link_to 'New Company', new_company_path %>
     </li>
+
   <% else %>
+
     <li>
       <%= link_to 'Home', unauthenticated_root_path %>
     </li>
+  
   <% end %>
-
 </ul>

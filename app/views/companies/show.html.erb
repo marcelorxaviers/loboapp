@@ -1,4 +1,16 @@
-<p id="notice"><%= notice %></p>
+<%= @company.user.email %> / <%= link_to @company.name, @company %>
+
+<% if @company.user != current_user %>
+  <% if not @company.users.include?(current_user) %>
+    (<%= link_to 'Join', company_join_path(@company), data: { confirm: 'Are you sure you want to join the company?' } %>)
+  <% else %>
+    (<%= link_to 'Leave', company_leave_path(@company), data: { confirm: 'Are you sure you wan to leave the company?' } %>)
+  <% end %>
+<% end %>
+
+<% if @company.users.include?(current_user) %>
+  <%= link_to 'Settings', edit_company_path(@company) %>
+<% end %>
 
 <p>
   <strong>Name:</strong>
@@ -11,14 +23,10 @@
 </p>
 
 <p>
-  <strong>Highrise base url:</strong>
-  <%= @company.highrise_base_url %>
+  <strong>Members:</strong>
+  <ul>
+    <% @company.users.each do |member| %>
+        <il><%= member.email %></il>
+    <% end %>
+  </ul>
 </p>
-
-<p>
-  <strong>Highrise token:</strong>
-  <%= @company.highrise_token %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', :back %>

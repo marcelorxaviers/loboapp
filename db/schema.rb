@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20140329235414) do
     t.integer "user_id"
   end
 
+  add_index "companies_users", ["company_id", "user_id"], name: "index_companies_users_on_company_id_and_user_id"
+  add_index "companies_users", ["user_id"], name: "index_companies_users_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

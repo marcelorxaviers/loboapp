@@ -7,50 +7,7 @@
 
 <% else %>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Owner</th>
-        <th># Members</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @companies.each do |company| %>
-        <tr>
-          <td><%= company.name %></td>
-          <td><%= company.user.email %></td>
-          <td><%= company.users.size %></td>
-          <td><%= link_to 'Show', company %></td>
-          <td>
-            <% if company.users.include?(current_user) %>
-              <%= link_to 'Edit', edit_company_path(company) %>
-            <% end %>
-          </td>
-          <td>
-            <% if company.user == current_user %>
-              <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </td>
-          <td>
-            <% if company.user != current_user %>
-              <% if not company.users.include?(current_user) %>
-                <%= link_to 'Join', company_join_path(company) %>
-              <% else %>
-                Leave?
-              <% end %>
-            <% end %>
-          </td>
-
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render 'shared/companylisting' %>
 
 <% end %>
 

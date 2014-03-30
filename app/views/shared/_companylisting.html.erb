@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner</th>
+      <th># Members</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= link_to company.name, company %></td>
+        <td><%= company.user.email %></td>
+        <td><%= company.users.size %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

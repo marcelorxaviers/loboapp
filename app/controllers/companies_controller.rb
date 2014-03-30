@@ -4,6 +4,21 @@ class CompaniesController < ApplicationController
   def join
     @company = Company.find(params[:company_id])
     @company.users.push(current_user) unless @company.users.include?(current_user)
+    respond_to do |format|
+      format.html { redirect_to @company, notice: 'Successfully joined company.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def leave
+    @company = Company.find(params[:company_id])
+    if @company.user != current_user
+      @company.users.delete(current_user)
+    end
+    respond_to do |format|
+      format.html { redirect_to authenticated_root_path, notice: 'Successfully left company.' }
+      format.json { head :no_content }
+    end
   end
 
   # GET /companies
