@@ -18,11 +18,22 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Turbolinks makes following links in your web application faster. 
+# Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# Build JSON APIs with ease. Read more: 
+# https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+# Rails forms made easy
+gem 'simple_form'
+
+# Authentication and authorization
+gem 'devise'
+
+# Environment variables
+gem "figaro", ">= 0.5.3"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -33,6 +44,25 @@ group :development do
   # Show better error messages during development
   gem 'better_errors'
 
-  # Grab bindings from higher up the call stack and evaluate code in that context
+  # Grab bindings from higher up the call stack and 
+  # evaluate code in that context
   gem 'binding_of_caller'
+end
+
+group :test do
+  # Supports testing purposes cleaning database
+  gem "database_cleaner"
+
+  # A collection of matchers for RSpec/MiniTest and Cucumber steps 
+  # to make testing emails go smoothly
+  gem "email_spec"
+end
+
+group :development, :test do
+  # Testing framework for rails
+  gem "rspec-rails"
+
+  # Fixtures replacement with a straightforward definition syntax, 
+  # support for multiple build strategies and multiple factories
+  gem "factory_girl_rails"  
 end

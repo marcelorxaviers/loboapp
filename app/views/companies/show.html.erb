@@ -1,0 +1,77 @@
+<%= render 'companies/contextheader' %>
+
+
+<% if @company.users.include?(current_user) %>
+  <%= link_to 'Create new contact', new_company_contact_path(@company) %>
+
+  <%= link_to 'Settings', edit_company_path(@company) %>
+<% end %>
+
+<% if @company.user != current_user %>
+  <% if not @company.users.include?(current_user) %>
+    (<%= link_to 'Join', company_join_path(@company), data: { confirm: 'Are you sure you want to join the company?' } %>)
+  <% else %>
+    (<%= link_to 'Leave', company_leave_path(@company), data: { confirm: 'Are you sure you wan to leave the company?' } %>)
+  <% end %>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @company.user.email %>
+</p>
+
+<p>
+  <strong>Members:</strong>
+  <ul>
+    <% @company.users.each do |member| %>
+        <il><%= member.email %></il>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Contacts:</strong>
+  <ul>
+    <% if @company.contacts.length == 0 %>
+      <h3>Nothing here =(</h3>
+      You may <%= link_to 'create new contacts', new_company_contact_path(@company) %>, as you wish
+    <% else %>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Company name</th>
+            <th>Job title</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @company.contacts.each do |contact| %>
+            <tr>
+              <td><%= link_to contact.fullname, company_contact_path(@company, contact) %></td>
+              <td><%= contact.email %></td>
+              <td><%= contact.company_name %></td>
+              <td><%= contact.job_title %></td>
+              <td><%= link_to 'Edit', edit_company_contact_path(@company, contact) %></td>
+              <td><%= link_to 'Destroy', company_contact_path(@company, contact), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td>
+                Highrise:
+                <%= link_to 'Add', company_contact_highrise_add_path(@company, contact) %>
+                or
+                <%= link_to 'Remove', company_contact_highrise_remove_path(@company, contact) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </ul>
+</p>

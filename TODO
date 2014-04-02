@@ -4,24 +4,36 @@ MAIN SCOPE:
      ✔ Clean old migrations and db @done (14-03-20 17:54)
      ✔ Clean assets (css, js) @done (14-03-20 17:54)
  ✔ Create blank rails app @done (14-03-20 17:54)
- ☐ Create company
+ ✔ Add simple_form @done (14-03-24 08:46)
+ ☐ Use "simple_form_for(@user, html: {class: 'form-horizontal' }) do |form|" in views
+ ✔ Create company @done (14-03-30 11:38)
  ☐ Create company validations
- ☐ Create sample data for company in seeds.rb
- ☐ Create contact
+ ✔ Create sample data for company in seeds.rb @done (14-03-30 11:39)
+ ✔ Create contact @done (14-03-30 14:49)
  ☐ Create contact validations
- ☐ Create sample data for contact in seeds.rb
- ☐ Create session (by company)
- ☐ Session context switch
+ ✔ Create sample data for contact in seeds.rb @done (14-03-30 15:05)
+ ✔ Create session @done (14-03-30 15:05)
+ ✘ Session context switch @cancelled (14-03-30 15:05)
+ ✔ Register / Unregister contact em mock do highrise @done (14-03-30 16:19)
+ ✔ Execute integration in bg job @done (14-03-30 16:19)
+ ☐ Add integration gem to the app
  ☐ Register / Unregister contact no highrise
- ☐ Authentication (by company) (?)
- ☐ Add simple form (?)
+ ☐ Remember if it is registered or not into highrise
+ ✔ Authentication (by company) (?) @done (14-03-30 15:05)
+ ☐ Authorization - Protect users not in the company to change its data or do anything (even see) their contacts
+
+PRETTYFICAR APP:
  ☐ Create default layout
  ☐ Clean routes.rb (example documentation)
+ ☐ Change default url options on env/prod to the actual host   
+ ☐ Create background job for api call
 
 DOCUMENTATION:
  ☐ Write README
  
  QUALITY:
+ ✔ Add RSpec @done (14-03-24 09:50)
+ ☐ Add cucumber
  ☐ Create tests
  ☐ Add to Travis CI
  

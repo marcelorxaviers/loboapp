@@ -1,0 +1,6 @@
+<% if @company.users.include?(current_user) %>
+	<%= link_to current_user.email, authenticated_root_path %>
+<% else %>
+	<%= @company.user.email %>
+<% end %> / 
+<%= link_to @company.name, @company %>

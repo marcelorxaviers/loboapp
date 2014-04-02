@@ -1,0 +1,17 @@
+<% if @contact.company.user == current_user %>
+	<%= link_to @contact.company.user.email, authenticated_root_path %>
+<% else %>
+	<%= @contact.company.user.email %>
+<% end %> / 
+
+<%= @contact.company.user.email %> / 
+<%= link_to @contact.company.name, @contact.company %> / 
+<%= link_to @contact.first_name, company_contact_path(@contact.company, @contact) %>
+
+<h1>Editing contact</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', company_contact_path(@contact.company, @contact) %>
+<%= link_to 'Destroy', company_contact_path(@contact.company, @contact), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', :back %>

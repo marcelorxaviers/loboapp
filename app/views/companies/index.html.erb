@@ -1,0 +1,9 @@
+<h1>Listing companies</h1>
+
+<% if @companies.length == 0 %>
+  <h3>Nothing here =(</h3>
+  You may <%= link_to 'create new companies', new_company_path %>, as you wish
+<% else %>
+  <%= render 'shared/companylisting' %>
+<% end %>
+
