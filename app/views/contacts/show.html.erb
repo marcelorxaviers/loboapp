@@ -4,6 +4,12 @@
 
 <%= link_to 'Edit', edit_company_contact_path(@contact.company, @contact) %>
 <%= link_to 'Destroy', company_contact_path(@contact.company, @contact), method: :delete, data: { confirm: 'Are you sure?' } %>
+Highrise:
+<% if contact.on_highrise? %>
+  <%= link_to 'Remove', company_contact_highrise_remove_path(@contact.company, @contact.) %>
+<% else %>
+  <%= link_to 'Add', company_contact_highrise_add_path(@contact.company, @contact.) %>
+<% end %>
 
 <p>
   <strong>First name:</strong>

@@ -64,9 +64,11 @@
               <td><%= link_to 'Destroy', company_contact_path(@company, contact), method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <td>
                 Highrise:
-                <%= link_to 'Add', company_contact_highrise_add_path(@company, contact) %>
-                or
-                <%= link_to 'Remove', company_contact_highrise_remove_path(@company, contact) %>
+                <% if contact.on_highrise? %>
+                  <%= link_to 'Remove', company_contact_highrise_remove_path(@company, contact) %>
+                <% else %>
+                  <%= link_to 'Add', company_contact_highrise_add_path(@company, contact) %>
+                <% end %>
               </td>
             </tr>
           <% end %>
