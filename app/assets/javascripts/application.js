@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+jQuery(function() {
+  $(".flash").delay(4000).slideUp(600);
+});

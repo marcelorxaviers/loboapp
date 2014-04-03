@@ -1,12 +1,14 @@
-<h1>Companies I am in</h1>
+<%= render 'shared/contextheader' %>
+
+<div class="page-header">
+  <h1>My Companies <small>Companies I own or am member at</small></h1>
+</div>
 
 <% if @companies.length == 0 %>
-
-  <h3>Nothing here =(</h3>
-  You may <%= link_to 'create a new company', new_company_path %>
-
+  <div class="well">
+    <h3>Nothing here =(</h3>
+    You may <%= link_to 'create a new company', new_company_path %>
+  </div>
 <% else %>
-
   <%= render 'shared/companylisting' %>
-
 <% end %>

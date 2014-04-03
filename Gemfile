@@ -12,14 +12,22 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+# Twitter bootstrap
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails'
+
+# Gravatar image
+gem 'gravatar_image_tag'
 
 # Turbolinks makes following links in your web application faster. 
 # Read more: https://github.com/rails/turbolinks

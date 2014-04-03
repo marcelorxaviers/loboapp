@@ -1,42 +1,14 @@
 <h1>Listing contacts</h1>
 
+<div class="page-header">
+  <h1>Contacts <small>Every existent contact</small></h1>
+</div>
+
 <%= link_to 'New Contact', new_company_contact_path(@company) %>
 
 <% if @contacts.length == 0 %>
   <h3>Nothing here =(</h3>
   You may <%= link_to 'create new contacts', new_company_contact_path(@company) %>, as you wish
 <% else %>
-  <table>
-    <thead>
-      <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Email</th>
-        <th>Company name</th>
-        <th>Job title</th>
-        <th>Phone</th>
-        <th>Website</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @contacts.each do |contact| %>
-        <tr>
-          <td><%= contact.first_name %></td>
-          <td><%= contact.last_name %></td>
-          <td><%= contact.email %></td>
-          <td><%= contact.company_name %></td>
-          <td><%= contact.job_title %></td>
-          <td><%= contact.phone %></td>
-          <td><%= contact.website %></td>
-          <td><%= link_to 'Show', company_contact_path(@company, contact) %></td>
-          <td><%= link_to 'Edit', edit_company_contact_path(@company, contact) %></td>
-          <td><%= link_to 'Destroy', company_contact_path(@company, contact), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render 'shared/contactlisting' %>
 <% end %>

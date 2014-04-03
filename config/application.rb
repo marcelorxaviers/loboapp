@@ -27,5 +27,10 @@ module Loboapp
       g.view_specs false
       g.helper_specs false
     end
+
+    config.assets.precompile += ["fontawesome-webfont.ttf",
+                             "fontawesome-webfont.eot",
+                             "fontawesome-webfont.svg",
+                             "fontawesome-webfont.woff"]
   end
 end
