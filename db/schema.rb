@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402195944) do
+ActiveRecord::Schema.define(version: 20140330152130) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -22,18 +25,31 @@ ActiveRecord::Schema.define(version: 20140402195944) do
     t.datetime "updated_at"
   end
 
-  add_index "companies", ["user_id"], name: "index_companies_on_user_id"
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "companies_users", id: false, force: true do |t|
     t.integer "company_id"
     t.integer "user_id"
   end
 
-  add_index "companies_users", ["company_id", "user_id"], name: "index_companies_users_on_company_id_and_user_id"
-  add_index "companies_users", ["user_id"], name: "index_companies_users_on_user_id"
+  add_index "companies_users", ["company_id", "user_id"], name: "index_companies_users_on_company_id_and_user_id", using: :btree
+  add_index "companies_users", ["user_id"], name: "index_companies_users_on_user_id", using: :btree
 
-# Could not dump table "contacts" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "contacts", force: true do |t|
+    t.integer  "company_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "company_name"
+    t.string   "job_title"
+    t.string   "phone"
+    t.string   "website"
+    t.integer  "highrise_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contacts", ["company_id"], name: "index_contacts_on_company_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -50,7 +66,7 @@ ActiveRecord::Schema.define(version: 20140402195944) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

@@ -6,12 +6,6 @@ gem 'highrise_wrapper', '~> 0.0.9'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
-
-# Use postgres because heroku demands it
-gem 'pg'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -57,6 +51,9 @@ end
 group :production do
   # Enables STDOUT loggin in Rails 4 (needed for Heroku to interpret it)
   gem 'rails_12factor', group: :production
+
+  # Use postgres because heroku demands it
+  gem 'pg'
 end
 
 group :development do
@@ -83,5 +80,8 @@ group :development, :test do
 
   # Fixtures replacement with a straightforward definition syntax, 
   # support for multiple build strategies and multiple factories
-  gem "factory_girl_rails"  
+  gem "factory_girl_rails"
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'  
 end

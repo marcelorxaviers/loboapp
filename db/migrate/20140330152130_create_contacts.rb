@@ -9,6 +9,7 @@ class CreateContacts < ActiveRecord::Migration
       t.string :job_title
       t.string :phone
       t.string :website
+      t.integer :highrise_id
 
       t.timestamps
     end
