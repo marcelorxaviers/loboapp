@@ -1,26 +1,25 @@
-<table>
+<table class="table table-striped table-bordered table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th># Contacts
       <th># Members</th>
       <th>Owner</th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @companies.each do |company| %>
       <tr>
-        <td><%= link_to company.name, company %></td>
+        <td>
+          <%= link_to company.name, company %>
+          <% if not company.users.include?(current_user) %>
+            <%= link_to 'Join!', company_join_path(company), data: { confirm: 'Are you sure you want to join the company?' }, class: "btn- btn-small btn-success" %>
+          <% end %>
+        </td>
         <td><%= company.contacts.size %></td>
         <td><%= company.users.size %></td>
         <td><%= company.user.email %></td>
-        <td>
-          <% if not company.users.include?(current_user) %>
-            (<%= link_to 'Join?', company_join_path(company), data: { confirm: 'Are you sure you want to join the company?' } %>)
-          <% end %>
-        </td>
       </tr>
     <% end %>
   </tbody>

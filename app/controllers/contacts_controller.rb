@@ -1,33 +1,30 @@
 class ContactsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
   before_action :set_company, only: [:index, :show, :new, :edit, :create, :destroy]
-  before_action :set_company_by_contact_id, only: [:highrise_add, :highrise_remove]
+  before_action :set_contact_by_contact_id, only: [:highrise_add, :highrise_remove]
 
   # GET /companies/:company_id/contacts/:contact_id/highrise_add
   def highrise_add
-    def parallel_work
-      sleep(10.seconds)
-      puts 'done work'
-    end
-    Thread.new{parallel_work()}
-
+    # TODO: use thread (or better, use sidekiq)
+    notice = @contact.highrise_save \
+      ? "Added contact '#{@contact.fullname}' from highrise." \
+      : "It was not possible to update the contact."
     respond_to do |format|
-      format.html { redirect_to authenticated_root_path, notice: "Adding contact '#{@contact.fullname}' to highrise." }
-      format.json { head :no_content }
+      format.html { redirect_to company_path(@contact.company), notice: notice }
+      format.json { render action: 'show', status: :created, location: @contact }
     end
   end
 
   # GET /companies/:company_id/contacts/:contact_id/highrise_remove
   def highrise_remove
-    def parallel_work
-      sleep(10.seconds)
-      puts 'done work'
-    end
-    Thread.new{parallel_work()}
-
+    # TODO: use thread (or better, use sidekiq)
+    notice = @contact.highrise_remove \
+      ? "Removed contact '#{@contact.fullname}' from highrise." \
+      : "It was not possible to update the contact."
     respond_to do |format|
-      format.html { redirect_to authenticated_root_path, notice: "Removing contact '#{@contact.fullname}' from highrise." }
-      format.json { head :no_content }
+      format.html { redirect_to company_path(@contact.company), notice: notice }
+      format.json { render action: 'show', status: :created, location: @contact }
     end
   end
 
@@ -92,7 +89,7 @@ class ContactsController < ApplicationController
       @contact = Contact.find(params[:id])
     end
 
-    def set_company_by_contact_id
+    def set_contact_by_contact_id
       @contact = Contact.find(params[:contact_id])
     end
 

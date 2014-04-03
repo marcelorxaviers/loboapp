@@ -12,6 +12,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= link_to :back, class: "btn" do %>
+      Cancel
+    <% end %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,17 +1,7 @@
-<% if @contact.company.user == current_user %>
-	<%= link_to @contact.company.user.email, authenticated_root_path %>
-<% else %>
-	<%= @contact.company.user.email %>
-<% end %> / 
+<%= render 'shared/contextheader' %>
 
-<%= @contact.company.user.email %> / 
-<%= link_to @contact.company.name, @contact.company %> / 
-<%= link_to @contact.first_name, company_contact_path(@contact.company, @contact) %>
-
-<h1>Editing contact</h1>
+<div class="page-header">
+  <h1><%= @contact.fullname %> <small>Edit Contact Information</small></h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', company_contact_path(@contact.company, @contact) %>
-<%= link_to 'Destroy', company_contact_path(@contact.company, @contact), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', :back %>

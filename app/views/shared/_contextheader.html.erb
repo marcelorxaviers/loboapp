@@ -1,0 +1,43 @@
+<ul class="breadcrumb">
+	<% if defined?(@contact) %>
+		<% if @company.users.include?(current_user) %>
+			<li>
+				<%= link_to current_user.email, authenticated_root_path %>
+				<span class="divider">/</span>
+			</li>
+		<% else %>
+			<li>
+				<%= @company.user.email %>
+				<span class="divider">/</span>
+			</li>
+		<% end %>
+		<li>
+			<%= link_to @company.name, @company %>
+			<span class="divider">/</span>
+		</li>
+		<li>
+			<%= @contact.fullname %>
+		</li>
+	<% else %>
+		<% if defined?(@company) %>
+			<% if @company.users.include?(current_user) %>
+			<li>
+				<%= link_to current_user.email, authenticated_root_path %>
+				<span class="divider">/</span>
+			</li>
+		<% else %>
+			<li>
+				<% if defined?(@company.user) and !@company.user.nil? %>
+					<%= @company.user.email %>
+				<% else %>
+					<%= current_user.email %>
+				<% end %>
+				<span class="divider">/</span>
+			</li>
+			<% end %>
+			<li class="active"><%= @company.name %></li>
+		<% else %>
+	    	<li class="active"><%= current_user.email %></li>	
+		<% end %>
+	<% end %>
+</ul>

@@ -5,7 +5,6 @@ MAIN SCOPE:
      ✔ Clean assets (css, js) @done (14-03-20 17:54)
  ✔ Create blank rails app @done (14-03-20 17:54)
  ✔ Add simple_form @done (14-03-24 08:46)
- ☐ Use "simple_form_for(@user, html: {class: 'form-horizontal' }) do |form|" in views
  ✔ Create company @done (14-03-30 11:38)
  ☐ Create company validations
  ✔ Create sample data for company in seeds.rb @done (14-03-30 11:39)
@@ -13,12 +12,11 @@ MAIN SCOPE:
  ☐ Create contact validations
  ✔ Create sample data for contact in seeds.rb @done (14-03-30 15:05)
  ✔ Create session @done (14-03-30 15:05)
- ✘ Session context switch @cancelled (14-03-30 15:05)
  ✔ Register / Unregister contact em mock do highrise @done (14-03-30 16:19)
  ✔ Execute integration in bg job @done (14-03-30 16:19)
- ☐ Add integration gem to the app
- ☐ Register / Unregister contact no highrise
- ☐ Remember if it is registered or not into highrise
+ ✔ Add integration gem to the app @done (14-04-02 18:06)
+ ✔ Call integration gem to Register / Unregister contact into highrise @done (14-04-02 18:06)
+ ✔ Remember if it is registered or not into highrise @done (14-04-02 18:06)
  ✔ Authentication (by company) (?) @done (14-03-30 15:05)
  ☐ Authorization - Protect users not in the company to change its data or do anything (even see) their contacts
 

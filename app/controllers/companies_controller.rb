@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_company, only: [:show, :edit, :update, :destroy]
   before_action :set_company_by_company_id, only: [:join, :leave]
 

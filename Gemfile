@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# My gem to map the app contact to highrise entity
+gem 'highrise_wrapper', '~> 0.0.9'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
@@ -9,14 +12,22 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+# Twitter bootstrap
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails'
+
+# Gravatar image
+gem 'gravatar_image_tag'
 
 # Turbolinks makes following links in your web application faster. 
 # Read more: https://github.com/rails/turbolinks
@@ -38,6 +49,11 @@ gem "figaro", ">= 0.5.3"
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :production do
+  # Enables STDOUT loggin in Rails 4 (needed for Heroku to interpret it)
+  gem 'rails_12factor', group: :production
 end
 
 group :development do
