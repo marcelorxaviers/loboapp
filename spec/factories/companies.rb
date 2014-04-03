@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :company do
-    name "MyString"
-    highrise_base_url "MyString"
-    highrise_token "MyString"
+    name "ACME"
+    highrise_base_url "BLA"
+    highrise_token "BLI"
     user nil
   end
 end

@@ -10,8 +10,10 @@
     <h3>Contacts:</h3>
     <ul>
       <% if @company.contacts.length == 0 %>
-        <h3>Nothing here =(</h3>
-        You may <%= link_to 'create new contacts', new_company_contact_path(@company) %>, as you wish
+        <div class="well">
+          <h3>Nothing here =(</h3>
+          You may <%= link_to 'create new contacts', new_company_contact_path(@company) %>, as you wish
+        </div>
       <% else %>
         <%= render 'shared/contactlisting' %>
       <% end %>

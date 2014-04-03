@@ -16,3 +16,7 @@ GMAIL_PASSWORD: d4m04app
 # App admin user
 ADMIN_EMAIL: rhlobo@gmail.com
 ADMIN_PASSWORD: d4m04app
+
+# Highrise related
+HIGHRISE_BASE_URL: https://personal1788.highrisehq.com
+HIGHRISE_TOKEN: ee54dd83345c800c14b6fda0a650659e

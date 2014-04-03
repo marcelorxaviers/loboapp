@@ -3,12 +3,12 @@
 FactoryGirl.define do
   factory :contact do
     company nil
-    first_name "MyString"
-    last_name "MyString"
-    email "MyString"
-    company_name "MyString"
-    job_title "MyString"
-    phone "MyString"
-    website "MyString"
+    first_name "primeiro"
+    last_name "nome"
+    email "user@provider2312.com"
+    company_name "umbrella corp"
+    job_title "researcher"
+    phone "2345678"
+    website ""
   end
 end

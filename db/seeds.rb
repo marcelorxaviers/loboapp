@@ -17,22 +17,22 @@ puts 'DEFAULT COMPANIES'
 companyA = Company.find_or_create_by_name('Sample A (dummy owner)') do |c|
 	c.user = user_dummy
 	c.users = [user_dummy]
-	c.highrise_base_url = 'https://personal1788.highrisehq.com'
-	c.highrise_token = 'ee54dd83345c800c14b6fda0a650659e'
+	c.highrise_base_url = ENV['HIGHRISE_BASE_URL'].dup
+	c.highrise_token = ENV['HIGHRISE_TOKEN'].dup
 end
 puts 'company: ' << companyA.name
 companyB = Company.find_or_create_by_name('Sample B (admin as owner)') do |c|
 	c.user = user
 	c.users = [user]
-	c.highrise_base_url = 'https://personal1788.highrisehq.com'
-	c.highrise_token = 'ee54dd83345c800c14b6fda0a650659e'
+	c.highrise_base_url = ENV['HIGHRISE_BASE_URL'].dup
+	c.highrise_token = ENV['HIGHRISE_TOKEN'].dup
 end
 puts 'company: ' << companyB.name
 companyC = Company.find_or_create_by_name('Sample C (dummy owner, admin as member)') do |c|
 	c.user = user_dummy
 	c.users = [user_dummy, user]
-	c.highrise_base_url = 'https://personal1788.highrisehq.com'
-	c.highrise_token = 'ee54dd83345c800c14b6fda0a650659e'
+	c.highrise_base_url = ENV['HIGHRISE_BASE_URL'].dup
+	c.highrise_token = ENV['HIGHRISE_TOKEN'].dup
 end
 puts 'company: ' << companyC.name
 

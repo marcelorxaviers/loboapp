@@ -3,6 +3,10 @@ class Contact < ActiveRecord::Base
 
   belongs_to :company
 
+  validates :first_name, :length => { :minimum => 3, :maximum => 60}, :presence => true, :allow_blank => false
+  validates :last_name, :length => { :minimum => 3, :maximum => 60}, :presence => true, :allow_blank => false
+  validates :email, :presence => true, :email => true
+
   def fullname
     "#{first_name} #{last_name}"
   end
