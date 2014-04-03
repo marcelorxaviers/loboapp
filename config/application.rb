@@ -28,9 +28,7 @@ module Loboapp
       g.helper_specs false
     end
 
-    config.assets.precompile += ["fontawesome-webfont.ttf",
-                             "fontawesome-webfont.eot",
-                             "fontawesome-webfont.svg",
-                             "fontawesome-webfont.woff"]
+    # Heroku requires this to be false
+    config.assets.initialize_on_precompile=false
   end
 end

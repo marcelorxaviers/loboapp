@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
   before_action :set_company, only: [:index, :show, :new, :edit, :create, :destroy]
   before_action :set_contact_by_contact_id, only: [:highrise_add, :highrise_remove]
