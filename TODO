@@ -32,7 +32,7 @@ DOCUMENTATION:
  QUALITY:
  ✔ Add RSpec @done (14-03-24 09:50)
  ☐ Add cucumber
- ☐ Create tests
+ ✔ Create tests @done (14-04-13 19:36)
  ☐ Add to Travis CI
  
  README:
