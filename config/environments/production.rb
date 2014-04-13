@@ -79,5 +79,5 @@ Loboapp::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # default url options
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'loboapp.herokuapp.com' }
 end

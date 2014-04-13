@@ -6,10 +6,10 @@ MAIN SCOPE:
  ✔ Create blank rails app @done (14-03-20 17:54)
  ✔ Add simple_form @done (14-03-24 08:46)
  ✔ Create company @done (14-03-30 11:38)
- ☐ Create company validations
+ ✔ Create company validations @done (14-04-13 10:37)
  ✔ Create sample data for company in seeds.rb @done (14-03-30 11:39)
  ✔ Create contact @done (14-03-30 14:49)
- ☐ Create contact validations
+ ✔ Create contact validations @done (14-04-13 10:37)
  ✔ Create sample data for contact in seeds.rb @done (14-03-30 15:05)
  ✔ Create session @done (14-03-30 15:05)
  ✔ Register / Unregister contact em mock do highrise @done (14-03-30 16:19)
@@ -21,13 +21,13 @@ MAIN SCOPE:
  ☐ Authorization - Protect users not in the company to change its data or do anything (even see) their contacts
 
 PRETTYFICAR APP:
- ☐ Create default layout
- ☐ Clean routes.rb (example documentation)
- ☐ Change default url options on env/prod to the actual host   
+ ✔ Create default layout @done (14-04-13 10:37)
+ ✔ Clean routes.rb (example documentation) @done (14-04-13 10:37)
+ ✔ Change default url options on env/prod to the actual host @done (14-04-13 10:38)
  ☐ Create background job for api call
 
 DOCUMENTATION:
- ☐ Write README
+ ✔ Write README @done (14-04-13 10:39)
  
  QUALITY:
  ✔ Add RSpec @done (14-03-24 09:50)
@@ -40,7 +40,7 @@ DOCUMENTATION:
  ☐ Add gem version badge
  ☐ Add code quality badge (code climate?)
  ☐ Add other badges??
- ☐ Write 'usage'
+ ✔ Write 'usage' @done (14-04-13 10:39)
 
 OTHER:
  ☐ Rename app and repository
