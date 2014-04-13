@@ -75,6 +75,12 @@ describe ContactsController do
         post :create, {:contact => valid_attributes, :company_id => company.to_param}
         response.should redirect_to(company_url(company))
       end
+
+      it "associates contact to company" do
+        company = FactoryGirl.create(:company)
+        post :create, {:contact => valid_attributes, :company_id => company.to_param}
+        Contact.last.company.should eq(company)
+      end
     end
 
     describe "with invalid params" do

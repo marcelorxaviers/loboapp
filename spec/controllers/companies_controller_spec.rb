@@ -13,6 +13,33 @@ describe CompaniesController do
     "highrise_token" => "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
   }}
 
+  describe "GET join" do
+    describe "company without current user as company member" do
+      it "adds curent user to company member list" do
+        company = FactoryGirl.create(:company)
+        get :join, {:company_id => company.to_param}
+        Company.last.users.should include(User.last)
+      end
+    end
+
+    describe "company with current user as company member" do
+      it "keeps curent user to company member list" do
+        company = FactoryGirl.create(:company)
+        get :join, {:company_id => company.to_param}
+        Company.last.users.should include_only_one_of(User.last)
+      end
+    end
+  end
+
+  describe "GET leave" do
+    it "removes curent user to company member list" do
+      company = FactoryGirl.create(:company)
+      company.users.push(User.last)
+      get :leave, {:company_id => company.to_param}
+      Company.last.users.should_not include(User.last)
+    end
+  end
+
   describe "GET index" do
     it "assigns all companies as @companies" do
       company = FactoryGirl.create(:company)
@@ -137,5 +164,4 @@ describe CompaniesController do
       response.should redirect_to(companies_url)
     end
   end
-
 end
