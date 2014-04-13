@@ -22,6 +22,9 @@ RSpec.configure do |config|
   # config.mock_with :flexmock
   # config.mock_with :rr
 
+  config.include Devise::TestHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
+
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
 

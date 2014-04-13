@@ -3,8 +3,8 @@
 FactoryGirl.define do
   factory :company do
     name "ACME"
-    highrise_base_url "BLA"
-    highrise_token "BLI"
+    highrise_base_url "https://personal1788.highrisehq.com"
+    highrise_token "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
     user nil
   end
 end

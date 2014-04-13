@@ -72,6 +72,9 @@ group :test do
   # A collection of matchers for RSpec/MiniTest and Cucumber steps 
   # to make testing emails go smoothly
   gem "email_spec"
+
+  # Rspec matchers for testing models
+  gem 'shoulda'
 end
 
 group :development, :test do
